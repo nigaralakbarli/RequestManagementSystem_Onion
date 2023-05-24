@@ -15,7 +15,7 @@ using System.Security.Claims;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Request")]
     [ApiController]
     public class RequestController : ControllerBase
     {
@@ -33,26 +33,26 @@ namespace RequestManagementSystem.WebApi.Controllers
             _reportService = reportService;
         }
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetRequests(int pageIndex = 1, int pageSize = 2)
         {
             return Ok(_requestService.GetRequests(pageIndex, pageSize));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreateRequest([FromForm][Required] RequestCreateDTO requestCreate)
         {
-           if(!_requestService.CreateRequest(requestCreate))
-           {
+            if (!_requestService.CreateRequest(requestCreate))
+            {
                 return BadRequest("Request already exist");
-           }
-           return Ok("Successfully created");
+            }
+            return Ok("Successfully created");
         }
 
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdateRequest(int requestId, [FromBody] RequestUpdateDTO requestUpdateDTO)
         {
@@ -63,11 +63,11 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/ChangeStatus")]
+        [Route("ChangeStatus")]
         [HttpPut]
         public IActionResult ChangeStatus([FromQuery] RequestChangeStatusDTO requestChangeStatusDTO)
         {
-            if(!_requestService.UpdateRequestStatus(requestChangeStatusDTO.RequestId, requestChangeStatusDTO.RequestStatusId))
+            if (!_requestService.UpdateRequestStatus(requestChangeStatusDTO.RequestId, requestChangeStatusDTO.RequestStatusId))
             {
                 return NotFound();
             }
@@ -78,7 +78,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NoContent();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeleteRequest(int requestId)
         {
@@ -91,14 +91,14 @@ namespace RequestManagementSystem.WebApi.Controllers
         }
 
 
-        [Route("/History")]
+        [Route("History")]
         [HttpGet]
         public IActionResult GetRequestHistory(int requestId)
         {
             return Ok(_requestService.GetHistory(requestId));
         }
 
-        [Route("/AddComment")]
+        [Route("AddComment")]
         [HttpPost]
         public IActionResult AddComment([FromForm] CommentRequestDTO comment)
         {
@@ -106,7 +106,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok();
         }
 
-        [Route("/CommentCount")]
+        [Route("CommentCount")]
         [HttpGet]
         public IActionResult GetCommentCount(int requestId)
         {
@@ -114,14 +114,14 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok(count);
         }
 
-        [Route("/LastComment")]
+        [Route("LastComment")]
         [HttpGet]
         public IActionResult GetLast(int requestId)
         {
             return Ok(_commentService.GetLast(requestId));
         }
 
-        [Route("/UpdateDetail")]
+        [Route("UpdateDetail")]
         [HttpPut]
         public IActionResult UpdateDetail([FromForm] RequestDetailUpdateDTO detail)
         {
@@ -129,19 +129,19 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok();
         }
 
-        [Route("/GetDetail")]
+        [Route("GetDetail")]
         [HttpGet]
         public IActionResult GetDetail(int requestId)
         {
             return Ok(_requestService.GetDetails(requestId));
         }
 
-        [Route("/DownloadRequestFile")]
+        [Route("DownloadRequestFile")]
         [HttpGet]
-        public IActionResult DownloadRequestFile(int requestDd)
+        public IActionResult DownloadRequestFile(int requestId)
         {
             // Get the entity with the specified id from your data store
-            var request = _requestService.GetRequestEntityById(requestDd);
+            var request = _requestService.GetRequestEntityById(requestId);
 
             if (request == null)
             {
@@ -155,12 +155,12 @@ namespace RequestManagementSystem.WebApi.Controllers
             return File(fileBytes, "application/octet-stream", Path.GetFileName(request.FileUploadPath));
         }
 
-        [Route("/DownloadCommentFile")]
+        [Route("DownloadCommentFile")]
         [HttpGet]
-        public IActionResult DownloadCommentFile(int commentid)
+        public IActionResult DownloadCommentFile(int commentId)
         {
             // Get the entity with the specified id from your data store
-            var commentFilePath = _requestService.GetCommentById(commentid).FileUploadPath;
+            var commentFilePath = _requestService.GetCommentById(commentId).FileUploadPath;
 
 
             if (commentFilePath.IsNullOrEmpty())
@@ -175,7 +175,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return File(fileBytes, "application/octet-stream", Path.GetFileName(commentFilePath));
         }
 
-        //[Route("/AllRequestsStatusCount")]
+        [Route("AllRequestsStatusCount")]
         [HttpGet]
         public List<RequestStatusCountDTO> GetAllRequestsStatusCount([FromQuery] int categoryId)
         {
@@ -189,19 +189,19 @@ namespace RequestManagementSystem.WebApi.Controllers
             return _requestService.GetMyRequestsStatusCount();
         }
 
-        [Route("/AllRequestByCategory_Status")]
-        [HttpGet]
+        [Route("AllRequestByCategory_Status")]
+        [HttpPost]
         public IActionResult AllRequestByCategory_Status([FromBody] RequestFilterDTO requestFilterDTO)
         {
-           return Ok(_requestService.GetAllRequestsByCategory_StatusWithFilter(requestFilterDTO));
+            return Ok(_requestService.GetAllRequestsByCategory_StatusWithFilter(requestFilterDTO));
 
         }
 
-        //[Route("/MyRequestByStatus")]
+        [Route("MyRequestByStatus")]
         [HttpPost]
         public IActionResult MyRequestByStatus(int? statusId, [FromQuery] RequestFilterDTO requestFilterDTO)
         {
-            return Ok (_requestService.GetMyRequestsByStatusWithFilter(statusId, requestFilterDTO));
+            return Ok(_requestService.GetMyRequestsByStatusWithFilter(statusId, requestFilterDTO));
         }
 
     }

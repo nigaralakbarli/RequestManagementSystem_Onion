@@ -8,7 +8,7 @@ using RequestManagementSystem.Domain.Repositories.EntityRepositories;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("RequestType")]
     [ApiController]
     public class RequestTypeController : ControllerBase
     {
@@ -19,21 +19,21 @@ namespace RequestManagementSystem.WebApi.Controllers
             _requestTypeService = requestTypeService;
         }
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetRequestTypes()
         {
             return Ok(_requestTypeService.GetRequestTypes());
         }
 
-        [Route("/GetById")]
+        [Route("GetById")]
         [HttpGet]
         public IActionResult GetRequestTypeById(int requestTypeId)
         {
             return Ok(_requestTypeService.GetRequestTypeById(requestTypeId));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreateRequestType(RequestTypeRequestDTO requestTypeRequestDTO)
         {
@@ -44,7 +44,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok("Successfully created");
         }
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdateRequestType(RequestTypeRequestDTO requestTypeRequestDTO)
         {
@@ -55,7 +55,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeleteRequestType(int requestTypeId)
         {

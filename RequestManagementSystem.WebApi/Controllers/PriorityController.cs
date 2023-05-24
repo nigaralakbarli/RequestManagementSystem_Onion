@@ -8,7 +8,7 @@ using RequestManagementSystem.Domain.Entities;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Priority")]
     [ApiController]
     public class PriorityController : ControllerBase
     {
@@ -20,21 +20,21 @@ namespace RequestManagementSystem.WebApi.Controllers
         }
 
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetPriorities()
         {
             return Ok(_priorityService.GetPriorities());
         }
 
-        [Route("/GetById")]
+        [Route("GetById")]
         [HttpGet]
         public IActionResult GetPriorityById(int priorityId)
         {
             return Ok(_priorityService.GetPriorityById(priorityId));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreatePriority(PriorityRequestDTO priorityRequestDTO)
         {
@@ -45,7 +45,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok("Successfully created");
         }
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdatePriority(PriorityRequestDTO priorityRequestDTO)
         {
@@ -56,7 +56,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeletePriority(int priorityId)
         {

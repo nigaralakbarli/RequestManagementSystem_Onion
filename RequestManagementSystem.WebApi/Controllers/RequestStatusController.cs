@@ -8,7 +8,7 @@ using RequestManagementSystem.Domain.Entities;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("RequestStatus")]
     [ApiController]
     public class RequestStatusController : ControllerBase
     {
@@ -19,21 +19,21 @@ namespace RequestManagementSystem.WebApi.Controllers
             _requestStatusService = requestStatusService;
         }
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetRequestStatuses()
         {
             return Ok(_requestStatusService.GetRequestStatuses());
         }
 
-        [Route("/GetById")]
+        [Route("GetById")]
         [HttpGet]
         public IActionResult GetRequestStatusById(int requestStatusId)
         {
             return Ok(_requestStatusService.GetRequestStatusById(requestStatusId));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreateRequestStatus(RequestStatusRequestDTO requestStatusRequestDTO)
         {
@@ -44,7 +44,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok("Successfully created");
         }
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdateRequestStatus(RequestStatusRequestDTO requestStatusRequestDTO)
         {
@@ -55,7 +55,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeleteRequestStatus(int requestStatusId)
         {

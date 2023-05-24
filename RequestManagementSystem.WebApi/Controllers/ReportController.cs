@@ -6,7 +6,7 @@ using RequestManagementSystem.Application.Interfaces;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Report")]
     [ApiController]
     public class ReportController : ControllerBase
     {
@@ -18,14 +18,14 @@ namespace RequestManagementSystem.WebApi.Controllers
             _reportService = reportService;
         }
 
-        [Route("/GetReports")]
+        [Route("GetReports")]
         [HttpGet]
         public IActionResult GetReports(int pageIndex = 1, int pageSize = 2)
         {
             return Ok(_reportService.GetAll(pageIndex, pageSize));
         }
 
-        [Route("/GetReportsByDateRange")]
+        [Route("GetReportsByDateRange")]
         [HttpGet]
         public IActionResult GetReportsByDateRange(DateTime startDate, DateTime endDate)
         {
@@ -39,7 +39,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok(_reportService.GetFiltered(reportFilterDTO));
         }
 
-        [Route("/excel")]
+        [Route("Excel")]
         [HttpPost]
         public IActionResult DownloadReports([FromBody] ReportFilterDTO reportFilterDTO)
         {

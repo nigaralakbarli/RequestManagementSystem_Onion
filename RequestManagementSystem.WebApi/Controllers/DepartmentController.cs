@@ -8,7 +8,7 @@ using RequestManagementSystem.Domain.Entities;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Department")]
     [ApiController]
     public class DepartmentController : ControllerBase
     {
@@ -19,21 +19,21 @@ namespace RequestManagementSystem.WebApi.Controllers
             _departmentService = departmentService;
         }
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetDepartments()
         {
             return Ok(_departmentService.GetDepartments());
         }
 
-        [Route("/GetById")]
+        [Route("GetById")]
         [HttpGet]
         public IActionResult GetDepartmentById(int departmentId)
         {
             return Ok(_departmentService.GetDepartmentById(departmentId));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreateDepartment(DepartmentRequestDTO departmentRequestDTO)
         {
@@ -44,7 +44,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok("Successfully created");
         }
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdateDepartment(DepartmentRequestDTO departmentRequestDTO)
         {
@@ -55,7 +55,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeleteDepartment(int departmentId)
         {

@@ -7,7 +7,7 @@ using RequestManagementSystem.Application.Services;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("User")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -18,21 +18,21 @@ namespace RequestManagementSystem.WebApi.Controllers
             _userService = userService;
         }
 
-        [Route("/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetUsers()
         {
             return Ok(_userService.GetUsers());
         }
 
-        [Route("/GetById")]
+        [Route("GetById")]
         [HttpGet]
         public IActionResult GetUserById(int userId)
         {
             return Ok(_userService.GetUserById(userId));
         }
 
-        [Route("/Create")]
+        [Route("Create")]
         [HttpPost]
         public IActionResult CreateCategory(UserCreateDTO userCreateDTO)
         {
@@ -43,7 +43,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return Ok("Successfully created");
         }
 
-        [Route("/Update")]
+        [Route("Update")]
         [HttpPut]
         public IActionResult UpdateUser(UserUpdateDTO userUpdateDTO)
         {
@@ -54,7 +54,7 @@ namespace RequestManagementSystem.WebApi.Controllers
             return NotFound();
         }
 
-        [Route("/Delete")]
+        [Route("Delete")]
         [HttpDelete]
         public IActionResult DeleteUser(int userId)
         {

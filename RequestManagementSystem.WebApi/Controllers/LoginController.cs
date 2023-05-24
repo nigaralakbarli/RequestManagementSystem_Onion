@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Login")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -32,13 +32,13 @@ namespace RequestManagementSystem.WebApi.Controllers
         [HttpPost]
         public IActionResult Login([FromQuery] LoginDTO loginDTO)
         {
-            var tokenResponse = _authService.Login(loginDTO); 
+            var tokenResponse = _authService.Login(loginDTO);
             if (tokenResponse != null)
             {
                 return Ok(tokenResponse);
             }
             return NotFound("User not found");
-            
+
         }
 
 
