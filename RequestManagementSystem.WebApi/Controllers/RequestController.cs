@@ -67,15 +67,12 @@ namespace RequestManagementSystem.WebApi.Controllers
         [HttpPut]
         public IActionResult ChangeStatus([FromQuery] RequestChangeStatusDTO requestChangeStatusDTO)
         {
-            if (!_requestService.UpdateRequestStatus(requestChangeStatusDTO.RequestId, requestChangeStatusDTO.RequestStatusId))
-            {
-                return NotFound();
-            }
+            var message = _requestService.UpdateRequestStatus(requestChangeStatusDTO.RequestId, requestChangeStatusDTO.RequestStatusId);
             if (requestChangeStatusDTO.RequestStatusId == 6)
             {
                 _reportService.Create(requestChangeStatusDTO.RequestId);
             }
-            return NoContent();
+            return Ok(message);
         }
 
         [Route("Delete")]
@@ -203,6 +200,5 @@ namespace RequestManagementSystem.WebApi.Controllers
         {
             return Ok(_requestService.GetMyRequestsByStatusWithFilter(statusId, requestFilterDTO));
         }
-
     }
 }

@@ -16,7 +16,7 @@ public interface IRequestService
     bool CreateRequest(RequestCreateDTO requestCreateDTO);
     bool UpdateRequest(RequestUpdateDTO requestUpdateDTO);
     bool DeleteRequest(int requestId);
-    bool UpdateRequestStatus(int requestId, int newStatusId);
+    string UpdateRequestStatus(int requestId, int newStatusId);
     List<RequestHistoryDTO> GetHistory(int requestId);
     void UpdateDetails(RequestDetailUpdateDTO requestDetail);
     RequestDetailResponseDTO GetDetails(int requestId);
@@ -30,4 +30,5 @@ public interface IRequestService
     List<Request> GetMyRequestsByStatus();
     List<RequestStatusCountDTO> GetStatusCountForCategory(int categoryId);
     List<RequestStatusCountDTO> GetMyRequestsStatusCount();
+    bool IsValideStatus(int currentStatusId, int newStatusId);
 }

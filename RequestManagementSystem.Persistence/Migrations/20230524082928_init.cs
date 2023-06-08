@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace RequestManagementSystem.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class İnitialCreate : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -388,23 +388,23 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4469), "3E - AGIS" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4473), "3E - dəstək" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4475), "3rd Party" },
-                    { 4, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4476), "abc web site" },
-                    { 5, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4477), "AGIS - Debitor" },
-                    { 6, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4479), "AD SOCAR Romania" },
-                    { 7, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4480), "Agis - Proqram təminatı" },
-                    { 8, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4481), "ailem.socar.az" },
-                    { 9, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4482), "ant.socar.az" },
-                    { 10, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4484), "ASAN web service" },
-                    { 11, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4485), "Azeriqaz sms" },
-                    { 12, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4486), "azkob.az" },
-                    { 13, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4487), "Call Center" },
-                    { 14, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4487), "CIC web site" },
-                    { 15, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4488), "CVS web site" },
-                    { 16, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4489), "AD SOCAR Romania" },
-                    { 17, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4490), "ailem.socar.az" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5640), "3E - AGIS" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5648), "3E - dəstək" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5666), "3rd Party" },
+                    { 4, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5671), "abc web site" },
+                    { 5, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5674), "AGIS - Debitor" },
+                    { 6, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5684), "AD SOCAR Romania" },
+                    { 7, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5688), "Agis - Proqram təminatı" },
+                    { 8, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5693), "ailem.socar.az" },
+                    { 9, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5695), "ant.socar.az" },
+                    { 10, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5699), "ASAN web service" },
+                    { 11, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5701), "Azeriqaz sms" },
+                    { 12, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5703), "azkob.az" },
+                    { 13, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5705), "Call Center" },
+                    { 14, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5706), "CIC web site" },
+                    { 15, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5708), "CVS web site" },
+                    { 16, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5710), "AD SOCAR Romania" },
+                    { 17, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5711), "ailem.socar.az" }
                 });
 
             migrationBuilder.InsertData(
@@ -412,10 +412,10 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4557), "Email" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4559), "Phone" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4560), "SOLMAN" },
-                    { 4, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4561), "REQUEST" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5979), "Email" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5989), "Phone" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5993), "SOLMAN" },
+                    { 4, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(5997), "REQUEST" }
                 });
 
             migrationBuilder.InsertData(
@@ -423,9 +423,9 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4586), "Information Technologies" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4589), "Human Resources" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4590), "Data Analysis" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6111), "Information Technologies" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6122), "Human Resources" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6124), "Data Analysis" }
                 });
 
             migrationBuilder.InsertData(
@@ -433,8 +433,8 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4613), "Application Maintenance" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4616), "Application Development" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6204), "Application Maintenance" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6211), "Application Development" }
                 });
 
             migrationBuilder.InsertData(
@@ -442,9 +442,9 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Level" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4633), "Low" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4635), "Medium" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4636), "High" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6274), "Low" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6288), "Medium" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6290), "High" }
                 });
 
             migrationBuilder.InsertData(
@@ -452,12 +452,12 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4653), "Open" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4657), "In Execution" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4658), "Rejected" },
-                    { 4, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4659), "Waiting" },
-                    { 5, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4660), "Approved" },
-                    { 6, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4662), "Close" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6367), "Open" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6380), "In Execution" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6382), "Rejected" },
+                    { 4, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6386), "Waiting" },
+                    { 5, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6390), "Approved" },
+                    { 6, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6400), "Close" }
                 });
 
             migrationBuilder.InsertData(
@@ -465,15 +465,15 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4683), "APP Change" },
-                    { 2, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4685), "APP Issue" },
-                    { 3, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4686), "APP New Requirement" },
-                    { 4, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4686), "Change the Report" },
-                    { 5, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4688), "Crate Custom Report" },
-                    { 6, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4689), "Create New Rrport" },
-                    { 7, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4690), "Incident" },
-                    { 8, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4691), "Master Data Change" },
-                    { 9, new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4692), "Service Request" }
+                    { 1, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6505), "APP Change" },
+                    { 2, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6513), "APP Issue" },
+                    { 3, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6518), "APP New Requirement" },
+                    { 4, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6524), "Change the Report" },
+                    { 5, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6526), "Crate Custom Report" },
+                    { 6, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6535), "Create New Rrport" },
+                    { 7, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6540), "Incident" },
+                    { 8, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6542), "Master Data Change" },
+                    { 9, new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6544), "Service Request" }
                 });
 
             migrationBuilder.InsertData(
@@ -481,8 +481,8 @@ namespace RequestManagementSystem.Persistence.Migrations
                 columns: new[] { "Id", "AllowNotification", "ContactNumber", "CreatedAt", "DepartmentId", "ImagePath", "InternalNumber", "Name", "Password", "Position", "Role" },
                 values: new object[,]
                 {
-                    { 1, true, "+995 551234567", new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4711), 1, null, "123456", "Nigar", "nigar123", "meslehetci", "Admin" },
-                    { 2, true, "+995 551234567", new DateTime(2023, 5, 2, 6, 51, 32, 435, DateTimeKind.Utc).AddTicks(4718), 2, null, "123456", "Ferec", "ferec123", "meslehetci", "User" }
+                    { 1, true, "+995 551234567", new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6648), 1, null, "123456", "Nigar", "nigar123", "meslehetci", "Admin" },
+                    { 2, true, "+995 551234567", new DateTime(2023, 5, 24, 8, 29, 27, 663, DateTimeKind.Utc).AddTicks(6675), 2, null, "123456", "Ferec", "ferec123", "meslehetci", "User" }
                 });
 
             migrationBuilder.CreateIndex(

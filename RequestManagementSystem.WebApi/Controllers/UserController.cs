@@ -4,6 +4,7 @@ using RequestManagementSystem.Application.DTOs.Category.Request;
 using RequestManagementSystem.Application.DTOs.User.Request;
 using RequestManagementSystem.Application.Interfaces;
 using RequestManagementSystem.Application.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace RequestManagementSystem.WebApi.Controllers
 {
@@ -63,6 +64,23 @@ namespace RequestManagementSystem.WebApi.Controllers
                 return Ok("Successfully deleted");
             }
             return NotFound();
+        }
+
+        [HttpPut]
+        [Route("/ChangePassword")]
+        public IActionResult ChangePassword([FromQuery][Required] string oldPassword, [Required] string newPassword, [Required] string repeatedPassword)
+        {
+            var msg = _userService.ChangePassword(oldPassword, newPassword, repeatedPassword);
+            return Ok(msg);
+        }
+
+
+        [HttpPost]
+        [Route("/AddUserCtegory")]
+        public IActionResult AddUserCategory([FromForm] UserCategoryCreateDTO userCategory)
+        {
+            _userService.AddUserCategory(userCategory);
+            return Ok();
         }
     }
 }

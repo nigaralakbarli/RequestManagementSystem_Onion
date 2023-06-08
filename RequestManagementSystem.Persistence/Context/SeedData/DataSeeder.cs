@@ -20,6 +20,8 @@ namespace RequestManagementSystem.Persistence.Context.SeedData
             modelBuilder.Entity<RequestStatus>().HasData(SeedRequestStatus());
             modelBuilder.Entity<RequestType>().HasData(SeedRequestType());
             modelBuilder.Entity<User>().HasData(SeedUser());
+            //modelBuilder.Entity<UserCategory>().HasData(SeedUserCateory());
+
         }
     }
 }

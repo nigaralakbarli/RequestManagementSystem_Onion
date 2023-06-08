@@ -68,7 +68,7 @@ public class RequestService : IRequestService
                 RequestStatusId = request.RequestStatusId,
                 UserId = request.CreateUserId,
             };
-            request.Actions.Add(action);
+            _actionRepository.Add(action);
             return true;
         }
         return false;
@@ -87,7 +87,6 @@ public class RequestService : IRequestService
         }
         return false;
     }
-
     public byte[] DownloadFile(string filePath)
     {
         byte[] fileBytes = File.ReadAllBytes(filePath);
@@ -307,30 +306,61 @@ public class RequestService : IRequestService
         return false;
     }
 
-    public bool UpdateRequestStatus(int requestId, int newStatusId)
+    public string UpdateRequestStatus(int requestId, int newStatusId)
     {
         var request = _requestRepository.GetById(requestId);
         if (request == null)
         {
-            throw new ArgumentException("Invalid request ID");
+            return "Request doesn't exsist";
         }
 
-        if (newStatusId == 2)
-        {
-            request.ExecutorUserId = _authService.GetCurrentUser().Id;
 
+        if (IsValideStatus(request.RequestStatusId, newStatusId))
+        {
+            if (newStatusId == 2)
+            {
+                if (request.CreateUserId != _authService.GetCurrentUser().Id)
+                {
+                    request.ExecutorUserId = _authService.GetCurrentUser().Id;
+
+                }
+                else
+                {
+                    return "Craete User cant be Executer user";
+                }
+            }
+            
+            request.RequestStatusId = newStatusId;
+            var newAction = new Domain.Entities.Action
+            {
+                RequestId = requestId,
+                UserId = request.ExecutorUserId,
+                RequestStatusId = newStatusId
+            };
+            _actionRepository.Add(newAction);
+            _requestRepository.Update(request);
+            return "Status changed";
+        }
+        else
+        {
+            return "Invalid statusId";
         }
 
-        request.RequestStatusId = newStatusId;
+        
+    }
 
-        var newAction = new Domain.Entities.Action
+    public bool IsValideStatus(int currentStatusId, int newStatusId)
+    {
+        switch (currentStatusId)
         {
-            RequestId = requestId,
-            UserId = request.ExecutorUserId,
-            RequestStatusId = newStatusId
-        };
-
-        request.Actions.Add(newAction);
-        return true;
+            case 1:
+                return newStatusId == 2 || newStatusId == 3;
+            case 2:
+                return newStatusId == 4 || newStatusId == 6;
+            case 4:
+                return newStatusId == 2;
+            default:
+                return true;
+        }
     }
 }

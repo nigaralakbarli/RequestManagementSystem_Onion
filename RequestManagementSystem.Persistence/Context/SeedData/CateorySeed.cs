@@ -13,23 +13,23 @@ namespace RequestManagementSystem.Persistence.Context.SeedData
         {
             List<Category> categories = new List<Category>()
             {
-                new Category { Id = 1, Name = "3E - AGIS"},
-                new Category { Id = 2, Name = "3E - dəstək" },
-                new Category { Id = 3, Name = "3rd Party" },
-                new Category { Id = 4, Name = "abc web site" },
-                new Category { Id = 5, Name = "AGIS - Debitor" },
-                new Category { Id = 6, Name = "AD SOCAR Romania" },
-                new Category { Id = 7, Name = "Agis - Proqram təminatı" },
-                new Category { Id = 8, Name = "ailem.socar.az" },
-                new Category { Id = 9, Name = "ant.socar.az" },
-                new Category { Id = 10, Name = "ASAN web service" },
-                new Category { Id = 11, Name = "Azeriqaz sms" },
-                new Category { Id = 12, Name = "azkob.az" },
-                new Category { Id = 13, Name = "Call Center" },
-                new Category { Id = 14, Name = "CIC web site" },
-                new Category { Id = 15, Name = "CVS web site" },
-                new Category { Id = 16, Name = "AD SOCAR Romania" },
-                new Category { Id = 17, Name = "ailem.socar.az" }
+                new Category { Id = 1, Name = "test1"},
+                new Category { Id = 2, Name = "test2" },
+                new Category { Id = 3, Name = "test3" },
+                new Category { Id = 4, Name = "test4" },
+                new Category { Id = 5, Name = "test5" },
+                new Category { Id = 6, Name = "test6" },
+                new Category { Id = 7, Name = "test7" },
+                new Category { Id = 8, Name = "test8" },
+                new Category { Id = 9, Name = "test9" },
+                new Category { Id = 10, Name = "test10" },
+                new Category { Id = 11, Name = "test11" },
+                new Category { Id = 12, Name = "test12" },
+                new Category { Id = 13, Name = "test13" },
+                new Category { Id = 14, Name = "test14" },
+                new Category { Id = 15, Name = "test15" },
+                new Category { Id = 16, Name = "test16" },
+                new Category { Id = 17, Name = "test17" }
             };
 
             return categories;

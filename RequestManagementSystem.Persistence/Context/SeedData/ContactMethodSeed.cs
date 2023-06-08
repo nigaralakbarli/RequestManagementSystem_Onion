@@ -13,10 +13,10 @@ namespace RequestManagementSystem.Persistence.Context.SeedData
         {
             List<ContactMethod> contactMethods = new List<ContactMethod>()
             {
-                new ContactMethod { Id = 1, Name = "Email" },
-                new ContactMethod { Id = 2, Name = "Phone" },
-                new ContactMethod { Id = 3, Name = "SOLMAN" },
-                new ContactMethod { Id = 4, Name = "REQUEST" }
+                new ContactMethod { Id = 1, Name = "test1" },
+                new ContactMethod { Id = 2, Name = "test2" },
+                new ContactMethod { Id = 3, Name = "test3" },
+                new ContactMethod { Id = 4, Name = "test4" }
             };
             return contactMethods;
         }

@@ -13,4 +13,6 @@ public interface IUserService
     bool UpdateUser(UserUpdateDTO userUpdateDTO);
     public void ChangePhoto(User user);
     User GetCurrentUser();
+    string ChangePassword(string oldPassword, string newPassword, string repeatedPassword);
+    void AddUserCategory(UserCategoryCreateDTO userCategory);
 }
